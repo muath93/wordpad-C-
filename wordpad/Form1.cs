@@ -171,5 +171,36 @@ namespace wordpad
             }
             
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.ShowDialog();
+
+
+
+          //  var pr = new PrintDialog();
+         //   pr.PrintToFile = true;
+         //   var result = pr.ShowDialog();
+///if (result == DialogResult.OK)
+          //      if (result == DialogResult.OK)
+            //    {
+            //        pr.Print();
+            //    }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+                 e.Graphics.DrawString(richTextBox1.Text, richTextBox1.Font, Brushes.Black, 100,100);
+        }
+
+        private void bunifuSlider1_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                richTextBox1.ZoomFactor = bunifuSlider1.Value;
+
+            }
+            catch { }
+        }
     }
 }
